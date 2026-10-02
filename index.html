@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Raimundo Sánchez Mosqueira | Geología · FCFM U. de Chile · Stanford University</title>
+  <meta name="description" content="Licenciado en Geología (Universidad de Chile), Pasante de Investigación en Stanford University. Modelamiento geoespacial, geomorfología fluvial cuantitativa y Python.">
+  <meta name="author" content="Raimundo Sánchez Mosqueira">
+  
+  <!-- LinkedIn & Open Graph -->
+  <meta property="og:title" content="Raimundo Sánchez Mosqueira | Geólogo & Data Scientist">
+  <meta property="og:description" content="Perfil profesional, curriculum vitae, investigación en geomorfología fluvial en Stanford y códigos abiertos en Python.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://raimanuel-ctrl.github.io/">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. Top Utility Bar (Estilo Institucional FCFM Beauchef)
+       ======================================================================== -->
+  <div class="top-utility-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-links">
+        <span data-i18n="top_inst_1">Universidad de Chile · FCFM</span>
+        <span class="top-bar-sep">|</span>
+        <span data-i18n="top_field">Geología & Modelamiento Geoespacial</span>
+        <span class="top-bar-sep">|</span>
+        <a href="https://github.com/raimanuel-ctrl/Analisis-Fluviales" target="_blank" style="color: var(--color-fcfm-red); font-weight:700;">
+          <i class="fa-brands fa-github"></i> raimanuel-ctrl/Analisis-Fluviales
+        </a>
+      </div>
+
+      <div class="top-bar-actions">
+        <a href="mailto:raimanuel@gmail.com" class="top-btn">
+          <i class="fa-solid fa-envelope" style="color: var(--color-fcfm-red);"></i> raimanuel@gmail.com
+        </a>
+        <a href="https://github.com/raimanuel-ctrl" target="_blank" class="top-btn">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <button id="langToggle" class="top-btn" title="Cambiar idioma / Switch language">
+          <i class="fa-solid fa-globe"></i> EN
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       2. Main Navigation Header (Estilo Beauchef / FCFM)
+       ======================================================================== -->
+  <header class="main-header">
+    <div class="container nav-container">
+      
+      <!-- Brand -->
+      <a href="#inicio" class="brand-wrapper">
+        <div class="brand-badge">
+          <i class="fa-solid fa-mountain"></i>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">Raimundo Sánchez Mosqueira</div>
+          <div class="brand-subtitle">Licenciado en Geología · FCFM</div>
+        </div>
+      </a>
+
+      <!-- Menu links -->
+      <nav>
+        <ul class="main-nav">
+          <li><a href="#inicio" class="nav-item-link active" data-i18n="nav_about">Sobre Mí</a></li>
+          <li><a href="#investigacion" class="nav-item-link" data-i18n="nav_research">Investigación & Código</a></li>
+          <li><a href="#experiencia" class="nav-item-link" data-i18n="nav_experience">Experiencia</a></li>
+          <li><a href="#competencias" class="nav-item-link" data-i18n="nav_skills">Competencias</a></li>
+          <li><a href="#contacto" class="nav-item-link" data-i18n="nav_contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Button -->
+      <div>
+        <button class="btn-cv-header trigger-print-cv" title="Imprimir o guardar en PDF">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span data-i18n="btn_cv">Guardar CV</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       3. Hero Banner (Vibrante, Académico & Humano)
+       ======================================================================== -->
+  <section id="inicio" class="hero-banner">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Left Presentation -->
+        <div>
+          <div class="hero-badges-wrapper">
+            <span class="hero-tag fcfm">
+              <i class="fa-solid fa-university"></i>
+              <span data-i18n="hero_tag_fcfm">FCFM · Geología U. de Chile</span>
+            </span>
+            <span class="hero-tag">
+              <i class="fa-solid fa-code"></i>
+              <span data-i18n="hero_tag_geo">Python & Modelamiento</span>
+            </span>
+            <span class="hero-tag">
+              <i class="fa-solid fa-chart-line"></i>
+              <span data-i18n="hero_tag_quant">Análisis Cuantitativo</span>
+            </span>
+          </div>
+
+          <h1 class="hero-headline" data-i18n="hero_headline">Raimundo Sánchez Mosqueira</h1>
+          <p class="hero-subhead" data-i18n="hero_subhead">
+            Licenciado en Geología · Análisis Cuantitativo · Modelamiento Numérico
+          </p>
+
+          <p class="hero-paragraph" data-i18n="hero_paragraph">
+            Licenciado en Ciencias con mención en Geología por la Universidad de Chile (etapa final de titulación) y pasante de investigación en Stanford University. Combino el rigor analítico de la programación científica (Python, MATLAB, QGIS) y la experiencia operativa en faena minera de gran escala (Minera Doña Inés de Collahuasi) con visión práctica de negocios y gestión comercial en el sector privado.
+          </p>
+
+          <div class="hero-cta-btns">
+            <a href="#investigacion" class="btn-cta-primary">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span data-i18n="hero_btn_explore">Explorar Código e Investigación</span>
+            </a>
+            <a href="#experiencia" class="btn-cta-secondary">
+              <i class="fa-solid fa-id-card"></i>
+              <span data-i18n="hero_btn_cv">Ver Curriculum</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Profile Card -->
+        <div>
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div class="hero-avatar">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <div class="hero-card-title">
+                <h3>Raimundo Sánchez M.</h3>
+                <p data-i18n="hero_card_role">Geólogo (c) · Data Scientist</p>
+              </div>
+            </div>
+
+            <div class="hero-contact-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Santiago, Chile</span>
+            </div>
+            <div class="hero-contact-row">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:raimanuel@gmail.com">raimanuel@gmail.com</a>
+            </div>
+            <div class="hero-contact-row">
+              <i class="fa-brands fa-linkedin-in" style="color: #0a66c2;"></i>
+              <a href="https://www.linkedin.com" target="_blank">Perfil Profesional en LinkedIn</a>
+            </div>
+            <div class="hero-contact-row">
+              <i class="fa-brands fa-github"></i>
+              <a href="https://github.com/raimanuel-ctrl" target="_blank">github.com/raimanuel-ctrl</a>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-light);">
+              <a href="#contacto" class="btn-cta-primary" style="width: 100%; text-align: center; justify-content: center; background: var(--color-navy); color: #fff !important;">
+                <i class="fa-solid fa-paper-plane"></i> Contactar Directamente
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. Interactive Code Slider ("Que se deslicen cosas")
+       ======================================================================== -->
+  <section id="investigacion" class="section alt-bg">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-pretitle">Código & Modelamiento</div>
+        <h2 class="section-heading" data-i18n="sec_research_title">Investigación & Códigos Abiertos</h2>
+        <p class="section-lead" data-i18n="sec_research_desc">
+          Suite de notebooks en Python para geomorfología fluvial cuantitativa: perfiles de río, transformada Chi (χ), pendiente normalizada (ksn), knickpoints y correlación con terrazas costeras y fallas.
+        </p>
+      </div>
+
+      <!-- Interactive Slider Shell -->
+      <div class="interactive-slider-wrapper">
+        
+        <!-- Navigation Pills (Selector rápido de módulos) -->
+        <div class="slider-top-nav">
+          <button class="slide-pill-btn active" data-slide="0">
+            <i class="fa-solid fa-mountain"></i> 01. DEM & Cuencas
+          </button>
+          <button class="slide-pill-btn" data-slide="1">
+            <i class="fa-solid fa-water"></i> 02. Chi (χ) & ksn
+          </button>
+          <button class="slide-pill-btn" data-slide="2">
+            <i class="fa-solid fa-chart-line"></i> 03. Knickpoints
+          </button>
+          <button class="slide-pill-btn" data-slide="3">
+            <i class="fa-solid fa-layer-group"></i> 04. Terrazas & Δt
+          </button>
+          <button class="slide-pill-btn" data-slide="4">
+            <i class="fa-solid fa-calculator"></i> 05. Síntesis K
+          </button>
+          <button class="slide-pill-btn" data-slide="5">
+            <i class="fa-solid fa-bolt"></i> 06. Fallas & Estructuras
+          </button>
+        </div>
+
+        <!-- Slider Track -->
+        <div class="slider-container">
+          <div id="sliderTrack" class="slider-track">
+            
+            <!-- Slide 1: AnalisisTopografico.ipynb -->
+            <div class="slider-slide">
+              <div class="slide-grid">
+                <div class="slide-info-card">
+                  <div class="slide-module-number">Módulo 01 · Topografía & Flujo D8</div>
+                  <h3 class="slide-title">AnalisisTopografico.ipynb</h3>
+                  <p class="slide-desc">
+                    Carga del Modelo Digital de Elevación (DEM), relleno automatizado de depresiones (sink filling), cálculo de direcciones de flujo D8, acumulación de área de drenaje y delimitación precisa de cuencas costeras desde coordenadas de desembocaduras (*outlets*).
+                  </p>
+                  <div class="slide-tags-box">
+                    <span class="tag-badge cyan">Rasterio</span>
+                    <span class="tag-badge cyan">GeoPandas</span>
+                    <span class="tag-badge amber">UTM 18S (EPSG:32718)</span>
+                    <span class="tag-badge">A_thresh = 1.0 km²</span>
+                  </div>
+                  <a href="https://github.com/raimanuel-ctrl/Analisis-Fluviales/blob/main/notebooks/AnalisisTopografico.ipynb" target="_blank" rel="noopener noreferrer" class="btn-open-github">
+                    <i class="fa-brands fa-github"></i> Ver Notebook en GitHub
+                  </a>
+                </div>
+
+                <div class="code-viewer">
+                  <div class="code-viewer-bar">
+                    <span><i class="fa-brands fa-python" style="color:#38bdf8;"></i> notebooks/AnalisisTopografico.ipynb</span>
+                    <button class="btn-copy-code" data-target="codeSnippet1">
+                      <i class="fa-regular fa-copy"></i> <span data-i18n="btn_copy">Copiar Código</span>
+                    </button>
+                  </div>
+                  <pre class="code-content"><code id="codeSnippet1">import rasterio
+import geopandas as gpd
+import numpy as np
+
+# 1. Carga de Modelo Digital de Elevación (DEM)
+dem_path = "data/dem_chile_central_utm18s.tif"
+with rasterio.open(dem_path) as src:
+    dem = src.read(1)
+    transform = src.transform
+    crs = src.crs
+
+# 2. Configuración de Outlets para delimitación de cuencas costeras
+outlets_coords = [
+    {"id_cuenca": "Rio_01", "x": 264500.0, "y": 6342100.0},
+    {"id_cuenca": "Rio_02", "x": 258900.0, "y": 6358400.0}
+]
+
+# 3. Flujo D8 y acumulación de área de drenaje
+# Umbral mínimo para estructuración de canal: A >= 1.0 km²
+area_threshold_m2 = 1.0e6
+print(f"Sistema de referencia comprobado: {crs}")
+print(f"Número de outlets configurados: {len(outlets_coords)}")</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Perfiles_chi_ksn.ipynb -->
+            <div class="slider-slide">
+              <div class="slide-grid">
+                <div class="slide-info-card">
+                  <div class="slide-module-number">Módulo 02 · Transformada Chi & ksn</div>
+                  <h3 class="slide-title">Perfiles_chi_ksn.ipynb</h3>
+                  <p class="slide-desc">
+                    Extracción del cauce principal, integración de la coordenada espacial transformada Chi (χ) linealizando perfiles de equilibrio (con concavidad teórica θ = 0.45 y A0 = 10⁶ m²) y cálculo del índice de pendiente normalizada (ksn local).
+                  </p>
+                  <div class="slide-tags-box">
+                    <span class="tag-badge cyan">NumPy</span>
+                    <span class="tag-badge cyan">SciPy</span>
+                    <span class="tag-badge red">θ = 0.45</span>
+                    <span class="tag-badge amber">A0 = 1,000,000 m²</span>
+                    <span class="tag-badge">Ventana = 500 m</span>
+                  </div>
+                  <a href="https://github.com/raimanuel-ctrl/Analisis-Fluviales/blob/main/notebooks/Perfiles_chi_ksn.ipynb" target="_blank" rel="noopener noreferrer" class="btn-open-github">
+                    <i class="fa-brands fa-github"></i> Ver Notebook en GitHub
+                  </a>
+                </div>
+
+                <div class="code-viewer">
+                  <div class="code-viewer-bar">
+                    <span><i class="fa-brands fa-python" style="color:#38bdf8;"></i> notebooks/Perfiles_chi_ksn.ipynb</span>
+                    <button class="btn-copy-code" data-target="codeSnippet2">
+                      <i class="fa-regular fa-copy"></i> <span data-i18n="btn_copy">Copiar Código</span>
+                    </button>
+                  </div>
+                  <pre class="code-content"><code id="codeSnippet2">import numpy as np
+
+# Parámetros morfométricos estándar de referencia
+A0 = 1.0e6          # Área de referencia (m²)
+theta_ref = 0.45    # Concavidad teórica de referencia (Perron & Royden)
+
+def calcular_coordenada_chi(dist_upstream, drainage_area, theta=0.45, A_0=1e6):
+    """
+    Calcula la transformada Chi (χ) a lo largo del perfil:
+    χ = ∫ (A_0 / A(x'))^θ dx'
+    """
+    dx = np.gradient(dist_upstream)
+    integrando = (A_0 / drainage_area) ** theta
+    return np.cumsum(integrando * dx)
+
+# Índice de pendiente normalizada de canal: S = ksn * A^(-theta)
+def calcular_ksn_local(elevation, dist_upstream, drainage_area, theta=0.45):
+    # Pendiente local suavizada con ventana móvil de 500 m
+    slope_local = np.abs(np.gradient(elevation, dist_upstream))
+    return slope_local * (drainage_area ** theta)</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: AnalisisPerfiles.ipynb -->
+            <div class="slider-slide">
+              <div class="slide-grid">
+                <div class="slide-info-card">
+                  <div class="slide-module-number">Módulo 03 · Detección de Knickpoints</div>
+                  <h3 class="slide-title">AnalisisPerfiles.ipynb</h3>
+                  <p class="slide-desc">
+                    Ajuste de regresiones lineales por tramos en el espacio χ–Elevación para identificar perturbaciones tectónicas o caídas de nivel de base. Detección automatizada de candidatos a knickpoints mediante curvatura y comparación con TopoToolbox.
+                  </p>
+                  <div class="slide-tags-box">
+                    <span class="tag-badge red">Knickpoints</span>
+                    <span class="tag-badge cyan">Piecewise Regression</span>
+                    <span class="tag-badge amber">TopoToolbox</span>
+                    <span class="tag-badge">Curvatura d²z/dχ²</span>
+                  </div>
+                  <a href="https://github.com/raimanuel-ctrl/Analisis-Fluviales/blob/main/notebooks/AnalisisPerfiles.ipynb" target="_blank" rel="noopener noreferrer" class="btn-open-github">
+                    <i class="fa-brands fa-github"></i> Ver Notebook en GitHub
+                  </a>
+                </div>
+
+                <div class="code-viewer">
+                  <div class="code-viewer-bar">
+                    <span><i class="fa-brands fa-python" style="color:#38bdf8;"></i> notebooks/AnalisisPerfiles.ipynb</span>
+                    <button class="btn-copy-code" data-target="codeSnippet3">
+                      <i class="fa-regular fa-copy"></i> <span data-i18n="btn_copy">Copiar Código</span>
+                    </button>
+                  </div>
+                  <pre class="code-content"><code id="codeSnippet3">from scipy.signal import find_peaks
+import numpy as np
+
+# En equilibrio geomórfico: z(x) = z_base + (ksn / A0^theta) * chi
+# Rupturas de pendiente en espacio chi indican pulsos tectónicos
+
+def identificar_knickpoints(chi, elevation, prominence=0.015, min_dist=25):
+    # Segunda derivada numérica de la elevación con respecto a Chi
+    d_elev = np.gradient(elevation, chi)
+    curvatura_chi = np.gradient(d_elev, chi)
+    
+    # Detección de anomalías morfológicas
+    peaks, _ = find_peaks(
+        curvatura_chi, 
+        prominence=prominence, 
+        distance=min_dist
+    )
+    return peaks
+
+# Comparación crítica entre método analítico y TopoToolbox (MATLAB)</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: AnalisisTerrazas.ipynb -->
+            <div class="slider-slide">
+              <div class="slide-grid">
+                <div class="slide-info-card">
+                  <div class="slide-module-number">Módulo 04 · Terrazas Marinas & Tiempos Δt</div>
+                  <h3 class="slide-title">AnalisisTerrazas.ipynb</h3>
+                  <p class="slide-desc">
+                    Asociación altimétrica de terrazas marinas y fluviales mapeadas en la costa de Chile central con los perfiles de río. Modelado cinemático del coeficiente de erodabilidad de roca (K) y cálculo de tiempos de propagación de la onda de incisión (Δt).
+                  </p>
+                  <div class="slide-tags-box">
+                    <span class="tag-badge cyan">Terrazas Costeras</span>
+                    <span class="tag-badge amber">Erodabilidad K</span>
+                    <span class="tag-badge red">Tiempo Δt (Ma)</span>
+                    <span class="tag-badge">Chile Central</span>
+                  </div>
+                  <a href="https://github.com/raimanuel-ctrl/Analisis-Fluviales/blob/main/notebooks/AnalisisTerrazas.ipynb" target="_blank" rel="noopener noreferrer" class="btn-open-github">
+                    <i class="fa-brands fa-github"></i> Ver Notebook en GitHub
+                  </a>
+                </div>
+
+                <div class="code-viewer">
+                  <div class="code-viewer-bar">
+                    <span><i class="fa-brands fa-python" style="color:#38bdf8;"></i> notebooks/AnalisisTerrazas.ipynb</span>
+                    <button class="btn-copy-code" data-target="codeSnippet4">
+                      <i class="fa-regular fa-copy"></i> <span data-i18n="btn_copy">Copiar Código</span>
+                    </button>
+                  </div>
+                  <pre class="code-content"><code id="codeSnippet4"># Migración remontante de knickpoints (knickpoint retreat)
+# Velocidad de onda de incisión: v_k = dx/dt = K * A^m * S^(n-1)
+
+def tiempo_propagacion_delta_t(chi_knickpoint, K_erodabilidad, A0=1e6, m=0.45):
+    """
+    Tiempo de respuesta del canal fluvial ante caída de nivel de base:
+    Δt = χ_kp / (K * A_0^m)
+    """
+    return chi_knickpoint / (K_erodabilidad * (A0 ** m))
+
+# Calibración de erodabilidad con terrazas marinas fechadas
+tasa_alzamiento_U = 0.28  # mm/año en costa de Chile central
+K_calibrado = tasa_alzamiento_U / (ksn_rejuvenecido ** 1.0)</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5: Interpretaciones_K_deltaT.ipynb -->
+            <div class="slider-slide">
+              <div class="slide-grid">
+                <div class="slide-info-card">
+                  <div class="slide-module-number">Módulo 05 · Síntesis Multicuenca</div>
+                  <h3 class="slide-title">Interpretaciones_K_deltaT.ipynb</h3>
+                  <p class="slide-desc">
+                    Carga e integración de catálogos curados de terrazas y knickpoints validados, lectura de selecciones multicuenca desde Excel y generación de figuras de síntesis para la memoria de título y artículos científicos.
+                  </p>
+                  <div class="slide-tags-box">
+                    <span class="tag-badge cyan">Pandas</span>
+                    <span class="tag-badge amber">OpenPyXL</span>
+                    <span class="tag-badge">Matplotlib</span>
+                    <span class="tag-badge red">Integración Regional</span>
+                  </div>
+                  <a href="https://github.com/raimanuel-ctrl/Analisis-Fluviales/blob/main/notebooks/Interpretaciones_K_deltaT.ipynb" target="_blank" rel="noopener noreferrer" class="btn-open-github">
+                    <i class="fa-brands fa-github"></i> Ver Notebook en GitHub
+                  </a>
+                </div>
+
+                <div class="code-viewer">
+                  <div class="code-viewer-bar">
+                    <span><i class="fa-brands fa-python" style="color:#38bdf8;"></i> notebooks/Interpretaciones_K_deltaT.ipynb</span>
+                    <button class="btn-copy-code" data-target="codeSnippet5">
+                      <i class="fa-regular fa-copy"></i> <span data-i18n="btn_copy">Copiar Código</span>
+                    </button>
+                  </div>
+                  <pre class="code-content"><code id="codeSnippet5">import pandas as pd
+import matplotlib.pyplot as plt
+
+# Carga de catálogo integrado multicuenca
+catalogo = pd.read_excel("data/catalogo_knickpoints_terrazas.xlsx")
+
+# Comparación estadística de tiempos de respuesta modelados (Ma)
+resumen = catalogo.groupby("cuenca_id")[["chi_kp", "delta_t_Ma"]].agg(["mean", "std"])
+print(resumen.describe())</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6: Perfiles_y_fallas.ipynb -->
+            <div class="slider-slide">
+              <div class="slide-grid">
+                <div class="slide-info-card">
+                  <div class="slide-module-number">Módulo 06 · Geología Estructural & Fallas</div>
+                  <h3 class="slide-title">Perfiles_y_fallas.ipynb</h3>
+                  <p class="slide-desc">
+                    Intersección espacial de trazas de fallas geológicas corticales activas con la red fluvial. Generación de transectas topográficas perpendiculares a escarpes tectónicos para evaluar el control estructural en el relieve.
+                  </p>
+                  <div class="slide-tags-box">
+                    <span class="tag-badge cyan">GeoPandas</span>
+                    <span class="tag-badge amber">Shapely</span>
+                    <span class="tag-badge red">Fallas Activas</span>
+                    <span class="tag-badge">Transectas Estructurales</span>
+                  </div>
+                  <a href="https://github.com/raimanuel-ctrl/Analisis-Fluviales/blob/main/notebooks/Perfiles_y_fallas.ipynb" target="_blank" rel="noopener noreferrer" class="btn-open-github">
+                    <i class="fa-brands fa-github"></i> Ver Notebook en GitHub
+                  </a>
+                </div>
+
+                <div class="code-viewer">
+                  <div class="code-viewer-bar">
+                    <span><i class="fa-brands fa-python" style="color:#38bdf8;"></i> notebooks/Perfiles_y_fallas.ipynb</span>
+                    <button class="btn-copy-code" data-target="codeSnippet6">
+                      <i class="fa-regular fa-copy"></i> <span data-i18n="btn_copy">Copiar Código</span>
+                    </button>
+                  </div>
+                  <pre class="code-content"><code id="codeSnippet6">import geopandas as gpd
+
+# Capas geológicas de fallas y red de drenaje
+fallas = gpd.read_file("data/fallas_activas_chile_central.gpkg")
+rios = gpd.read_file("data/red_fluvial.gpkg")
+
+# Intersección geométrica para identificar cruces estructurales
+intersecciones = gpd.overlay(rios, fallas, how="intersection")
+print(f"Total de intersecciones río-falla detectadas: {len(intersecciones)}")</code></pre>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slider Controls Footer -->
+        <div class="slider-footer">
+          <div class="slider-arrows">
+            <button id="prevSlide" class="arrow-btn" title="Módulo anterior">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="nextSlide" class="arrow-btn" title="Módulo siguiente">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Dots Indicator -->
+          <div id="sliderDots" class="slider-dots"></div>
+
+          <div>
+            <a href="https://github.com/raimanuel-ctrl/Analisis-Fluviales" target="_blank" class="btn-cv-header" style="padding: 0.45rem 1rem; font-size: 0.8rem;">
+              <i class="fa-brands fa-github"></i> Repositorio Completo en GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. Professional Experience & Teaching Section
+       ======================================================================== -->
+  <section id="experiencia" class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-pretitle">Trayectoria</div>
+        <h2 class="section-heading" data-i18n="sec_exp_title">Experiencia Profesional & Docencia</h2>
+        <p class="section-lead" data-i18n="sec_exp_desc">
+          Experiencia comprobada en investigación internacional en Stanford, consultoría geoespacial, faena minera de alta exigencia y docencia universitaria.
+        </p>
+      </div>
+
+      <div class="experience-grid">
+        
+        <!-- Stanford University -->
+        <div class="exp-card stanford">
+          <div class="exp-card-header">
+            <div class="exp-title-block">
+              <h3 data-i18n="exp1_role">Pasante de investigación en geomorfología fluvial</h3>
+              <div class="exp-org-tag" style="color: var(--color-stanford-cardinal);" data-i18n="exp1_org">
+                Stanford University · Dept. of Earth & Planetary Sciences
+              </div>
+            </div>
+            <div class="exp-period-pill" data-i18n="exp1_period">Septiembre 2026 — Actualidad</div>
+          </div>
+          <ul class="exp-bullets-list">
+            <li data-i18n="exp1_b1">Analizo datos geoespaciales y modelos digitales mediante Python, MATLAB y QGIS, con flujos reproducibles.</li>
+            <li data-i18n="exp1_b2">Desarrollo metodologías cuantitativas y aplicaciones interactivas para identificar patrones morfológicos y comunicar resultados.</li>
+            <li data-i18n="exp1_b3">Participo en reuniones y seminarios con equipos internacionales multidisciplinarios, conduciendo el trabajo en inglés.</li>
+          </ul>
+        </div>
+
+        <!-- CIGEA Ltda -->
+        <div class="exp-card cigea">
+          <div class="exp-card-header">
+            <div class="exp-title-block">
+              <h3 data-i18n="exp2_role">Práctica Profesional II — Análisis morfométrico y geoespacial</h3>
+              <div class="exp-org-tag" style="color: var(--color-teal);" data-i18n="exp2_org">CIGEA Ltda.</div>
+            </div>
+            <div class="exp-period-pill" data-i18n="exp2_period">Enero 2026 — Abril 2026</div>
+          </div>
+          <ul class="exp-bullets-list">
+            <li data-i18n="exp2_b1">Procesé información morfométrica de 26 cuencas mediante MATLAB, TopoToolbox, QGIS y QField.</li>
+            <li data-i18n="exp2_b2">Automaticé análisis y desarrollé <strong>PerfilExplorer</strong>, una aplicación interactiva para visualizar perfiles y métricas fluviales.</li>
+            <li data-i18n="exp2_b3">Participé en terreno con SERNAGEOMIN para reconocimiento geológico de campo y revisión de anomalías geomorfológicas.</li>
+          </ul>
+        </div>
+
+        <!-- Minera Collahuasi -->
+        <div class="exp-card collahuasi">
+          <div class="exp-card-header">
+            <div class="exp-title-block">
+              <h3 data-i18n="exp3_role">Práctica Profesional I — Gerencia de Recursos Minerales</h3>
+              <div class="exp-org-tag" style="color: var(--color-copper);" data-i18n="exp3_org">
+                Compañía Minera Doña Inés de Collahuasi
+              </div>
+            </div>
+            <div class="exp-period-pill" data-i18n="exp3_period">Enero 2025 — Marzo 2025</div>
+          </div>
+          <ul class="exp-bullets-list">
+            <li data-i18n="exp3_b1">Apoyé el reconocimiento geológico, control mineral y análisis de muestras, testigos de sondaje diamantino y cuttings.</li>
+            <li data-i18n="exp3_b2">Participé en mapeo estructural de rajo y conocí flujos de geología de mina, exploración y planificación de corto plazo.</li>
+            <li data-i18n="exp3_b3">Trabajé en faena minera de gran altitud bajo turno 4x3, coordinándome con equipos multidisciplinarios bajo estrictos estándares de seguridad.</li>
+          </ul>
+        </div>
+
+        <!-- Publicitarios +4 Ltda -->
+        <div class="exp-card business">
+          <div class="exp-card-header">
+            <div class="exp-title-block">
+              <h3 data-i18n="exp4_role">Asistente de Operaciones & Gestión</h3>
+              <div class="exp-org-tag" style="color: #6366f1;" data-i18n="exp4_org">
+                Publicitarios +4 Ltda (Empresa Familiar)
+              </div>
+            </div>
+            <div class="exp-period-pill" data-i18n="exp4_period">2018 — 2024</div>
+          </div>
+          <ul class="exp-bullets-list">
+            <li data-i18n="exp4_b1"><strong>Gestión Financiera:</strong> Administré facturación, emisión de órdenes de compra y cobranza con clientes corporativos.</li>
+            <li data-i18n="exp4_b2"><strong>Relación Comercial en Terreno:</strong> Realicé visitas técnicas y comerciales para levantamiento de requerimientos y cotizaciones.</li>
+            <li data-i18n="exp4_b3"><strong>Producción y Taller:</strong> Apoyé directamente en labores operativas de manufactura en taller, asegurando cumplimiento de cronogramas.</li>
+          </ul>
+        </div>
+
+        <!-- Docencia Universidad de Chile -->
+        <div class="exp-card uchile">
+          <div class="exp-card-header">
+            <div class="exp-title-block">
+              <h3 data-i18n="exp5_role">Docencia Universitaria en Geología</h3>
+              <div class="exp-org-tag" style="color: var(--color-navy-light);" data-i18n="exp5_org">
+                Universidad de Chile · Departamento de Geología
+              </div>
+            </div>
+            <div class="exp-period-pill" data-i18n="exp5_period">2025 — 2026</div>
+          </div>
+          <ul class="exp-bullets-list">
+            <li data-i18n="exp5_b1"><strong>Ayudante de Geología Estructural</strong> (otoño 2026): Apoyo en resolución de problemas geométricos de deformación, stereonet y fallas.</li>
+            <li data-i18n="exp5_b2"><strong>Auxiliar de Terreno</strong> (primavera 2025): Acompañamiento en actividades geológicas de campo, cartografía y comunicación técnica.</li>
+          </ul>
+        </div>
+
+        <!-- Educación -->
+        <div class="exp-card" style="border-left-color: var(--color-fcfm-red); background: #fdfaf9;">
+          <div class="exp-card-header">
+            <div class="exp-title-block">
+              <h3 data-i18n="edu_degree">Licenciatura en Ciencias, mención Geología</h3>
+              <div class="exp-org-tag" style="color: var(--color-fcfm-red);" data-i18n="edu_org">
+                Universidad de Chile · Facultad de Ciencias Físicas y Matemáticas (FCFM)
+              </div>
+            </div>
+            <div class="exp-period-pill" data-i18n="edu_period">2020 — 2026</div>
+          </div>
+          <ul class="exp-bullets-list">
+            <li data-i18n="edu_note">Título de Geólogo esperado: Diciembre de 2026.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. Relevant Competencies Dashboard (Single Unified Window)
+       ======================================================================== -->
+  <section id="competencias" class="section alt-bg">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-pretitle">Habilidades Clave</div>
+        <h2 class="section-heading" data-i18n="sec_comp_title">Panel de Competencias Relevantes</h2>
+        <p class="section-lead" data-i18n="sec_comp_desc">
+          Herramientas técnicas y capacidades aplicadas directamente al trabajo en minería, consultoría y modelamiento numérico.
+        </p>
+      </div>
+
+      <div class="competencies-dashboard">
+        <div class="competencies-cols">
+          
+          <!-- Column 1: Geociencias & SIG -->
+          <div class="comp-col-card">
+            <div class="comp-col-header">
+              <div class="comp-icon blue">
+                <i class="fa-solid fa-earth-americas"></i>
+              </div>
+              <h4 data-i18n="comp_cat1">Geociencias & SIG</h4>
+            </div>
+            <div class="comp-badge-list">
+              <div class="comp-item-row">
+                <span>QGIS & QField</span>
+                <span class="comp-chip fcfm">Avanzado</span>
+              </div>
+              <div class="comp-item-row">
+                <span>TopoToolbox & TopoAnalysis</span>
+                <span class="comp-chip">Morfometría</span>
+              </div>
+              <div class="comp-item-row">
+                <span>Modelamiento Geoespacial & DEMs</span>
+                <span class="comp-chip">Raster/Vector</span>
+              </div>
+              <div class="comp-item-row">
+                <span>Mapeo Geológico & Estructural</span>
+                <span class="comp-chip fcfm">Rajo/Terreno</span>
+              </div>
+              <div class="comp-item-row">
+                <span>Control Mineral & Sondajes (DDH)</span>
+                <span class="comp-chip">Faena</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Programación & Flujos -->
+          <div class="comp-col-card">
+            <div class="comp-col-header">
+              <div class="comp-icon red">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h4 data-i18n="comp_cat2">Programación & Flujos</h4>
+            </div>
+            <div class="comp-badge-list">
+              <div class="comp-item-row">
+                <span>Python en Geociencias</span>
+                <span class="comp-chip fcfm">Automatización</span>
+              </div>
+              <div class="comp-item-row">
+                <span>MATLAB Científico</span>
+                <span class="comp-chip">Cálculo Numérico</span>
+              </div>
+              <div class="comp-item-row">
+                <span>Flujos de Datos Reproducibles</span>
+                <span class="comp-chip">Pipelines</span>
+              </div>
+              <div class="comp-item-row">
+                <span>Ordenamiento & Ejecución de Scripts</span>
+                <span class="comp-chip">Jupyter / CLI</span>
+              </div>
+              <div class="comp-item-row">
+                <span>Excel Avanzado</span>
+                <span class="comp-chip green">Técnico/Finanzas</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Operaciones & Negocios -->
+          <div class="comp-col-card">
+            <div class="comp-col-header">
+              <div class="comp-icon gold">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <h4 data-i18n="comp_cat3">Operaciones & Idiomas</h4>
+            </div>
+            <div class="comp-badge-list">
+              <div class="comp-item-row">
+                <span>Flujos en Faena Minera</span>
+                <span class="comp-chip">Turno 4x3</span>
+              </div>
+              <div class="comp-item-row">
+                <span>Gestión Financiera & Facturación</span>
+                <span class="comp-chip">Empresa</span>
+              </div>
+              <div class="comp-item-row">
+                <span>Relación Comercial con Clientes</span>
+                <span class="comp-chip green">Terreno</span>
+              </div>
+              <div class="comp-item-row">
+                <span>Inglés Profesional</span>
+                <span class="comp-chip fcfm">C1 (TOEFL B2)</span>
+              </div>
+              <div class="comp-item-row">
+                <span>Alemán</span>
+                <span class="comp-chip">B1</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. Direct Contact Section
+       ======================================================================== -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-pretitle">Conectemos</div>
+        <h2 class="section-heading" data-i18n="sec_contact_title">Contacto Directo</h2>
+        <p class="section-lead" data-i18n="sec_contact_desc">
+          Disponible para oportunidades laborales, consultoría técnica geológica y proyectos de investigación aplicada.
+        </p>
+      </div>
+
+      <div class="contact-boxes">
+        <a href="mailto:raimanuel@gmail.com" class="contact-box email">
+          <div class="contact-box-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="contact-box-label">Correo Electrónico</div>
+          <div class="contact-box-val">raimanuel@gmail.com</div>
+        </a>
+
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-box linkedin">
+          <div class="contact-box-icon">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <div class="contact-box-label">LinkedIn</div>
+          <div class="contact-box-val">Perfil Profesional</div>
+        </a>
+
+        <a href="https://github.com/raimanuel-ctrl" target="_blank" rel="noopener noreferrer" class="contact-box github">
+          <div class="contact-box-icon">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="contact-box-label">GitHub</div>
+          <div class="contact-box-val">raimanuel-ctrl</div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. Footer FCFM / Beauchef Style
+       ======================================================================== -->
+  <footer class="footer-fcfm">
+    <div class="container footer-content">
+      <div data-i18n="footer_text">
+        © 2026 Raimundo Sánchez Mosqueira. Geología · Universidad de Chile · Stanford University.
+      </div>
+      <div>
+        <a href="#inicio">
+          <i class="fa-solid fa-arrow-up"></i> Volver al inicio
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
